@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
+}
+
+.slide {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.active {
+  display: flex;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-width: 600px;
+  width: 90%;
+  z-index: 10;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #e91e63;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.ibb.co/Hnxwrp8/confetti.gif') center/cover no-repeat;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+video {
+  max-width: 100%;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pyro {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 #fff;
+  animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+}
+
+.pyro > .after {
+  animation-delay: 1.25s, 1.25s, 1.25s;
+  animation-duration: 1.25s, 1.25s, 6.25s;
+}
+
+@keyframes bang {
+  to {
+    box-shadow: -70px -115.67px #00ff77, 55px -53.67px #ff00c8, 244px -8.67px #ff006a, 226px -132.67px #ff9500,
+    -198px -65.67px #ff0066, 193px 16.33px #004dff, 2px -64.67px #00ff33, 31px -116.67px #00ffcc,
+    96px -134.67px #0048ff, 236px -86.67px #0d00ff, -215px -115.67px #ff5900, 50px 6.33px #73ff00,
+    5px -59.67px #ff0088, 122px -101.67px #ff0062, 88px -53.67px #a2ff00, 199px -4.67px #00ff84;
+  }
+}
+
+@keyframes gravity {
+  to {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+}
+
+@keyframes position {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+
+.birthday-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff4081;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4081, 0 0 20px #ff4081;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4081, 0 0 20px #ff4081;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4081, 0 0 30px #ff4081, 0 0 40px #ff4081;
+  }
+}
